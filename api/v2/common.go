@@ -30,7 +30,7 @@ func convertRowStatusToStore(rowStatus apiv2pb.RowStatus) store.RowStatus {
 }
 
 func getCurrentUser(ctx context.Context, s *store.Store) (*store.User, error) {
-	username, ok := ctx.Value(usernameContextKey).(string)
+	username, ok := ctx.Value(UsernameContextKey).(string)
 	if !ok {
 		return nil, nil
 	}

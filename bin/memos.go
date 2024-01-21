@@ -1,4 +1,4 @@
-package main
+package bin
 
 import (
 	"context"
@@ -168,7 +168,9 @@ func initConfig() {
 		fmt.Printf("failed to get profile, error: %+v\n", err)
 		return
 	}
+}
 
+func printGreetings() {
 	println("---")
 	println("Server profile")
 	println("data:", profile.Data)
@@ -180,9 +182,7 @@ func initConfig() {
 	println("version:", profile.Version)
 	println("metric:", profile.Metric)
 	println("---")
-}
 
-func printGreetings() {
 	print(greetingBanner)
 	if len(profile.Addr) == 0 {
 		fmt.Printf("Version %s has been started on port %d\n", profile.Version, profile.Port)
@@ -194,11 +194,4 @@ func printGreetings() {
 	fmt.Printf("👉Website: %s\n", "https://usememos.com")
 	fmt.Printf("👉GitHub: %s\n", "https://github.com/usememos/memos")
 	println("---")
-}
-
-func main() {
-	err := Execute()
-	if err != nil {
-		panic(err)
-	}
 }

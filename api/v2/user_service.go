@@ -112,7 +112,7 @@ func (s *APIV2Service) UpdateUser(ctx context.Context, request *apiv2pb.UpdateUs
 		return nil, status.Errorf(codes.InvalidArgument, "name is required")
 	}
 	currentUser, err := getCurrentUser(ctx, s.Store)
-	if err != nil {
+	if err != nil || currentUser == nil {
 		return nil, status.Errorf(codes.Internal, "failed to get user: %v", err)
 	}
 	if currentUser.Username != username && currentUser.Role != store.RoleAdmin && currentUser.Role != store.RoleHost {

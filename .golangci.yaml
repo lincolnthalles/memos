@@ -18,7 +18,7 @@ linters:
     - bodyclose
 
 issues:
-  include:
+  include: []
     # https://golangci-lint.run/usage/configuration/#command-line-options
   exclude:
     - Rollback
@@ -32,6 +32,7 @@ linters-settings:
   goimports:
     # Put imports beginning with prefix after 3rd-party packages.
     local-prefixes: github.com/usememos/memos
+    
   revive:
     # Default to run all linters so that new rules in the future could automatically be added to the static check.
     enable-all-rules: true
@@ -73,6 +74,11 @@ linters-settings:
         disabled: true
       - name: unhandled-error
         disabled: true
+      - name: import-alias-naming
+        severity: warning
+        disabled: false
+        arguments:
+          - "^[_a-z][a-z0-9]{0,}$"
   gocritic:
     disabled-checks:
       - ifElseChain

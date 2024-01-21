@@ -24,7 +24,7 @@ type ContextKey int
 const (
 	// The key name used to store username in the context
 	// user id is extracted from the jwt token subject field.
-	usernameContextKey ContextKey = iota
+	UsernameContextKey ContextKey = iota
 )
 
 // GRPCAuthInterceptor is the auth interceptor for gRPC server.
@@ -76,7 +76,7 @@ func (in *GRPCAuthInterceptor) AuthenticationInterceptor(ctx context.Context, re
 	}
 
 	// Stores userID into context.
-	childCtx := context.WithValue(ctx, usernameContextKey, username)
+	childCtx := context.WithValue(ctx, UsernameContextKey, username)
 	return handler(childCtx, request)
 }
 
