@@ -1,6 +1,6 @@
 {
   "about": {
-    "blogs": "Blogs",
+    "blogs": "Blogues",
     "description": "Um serviço de notas leve e que prioriza a privacidade. Capture e partilhe facilmente as suas melhores ideias.",
     "documents": "Documentos",
     "github-repository": "Repositório GitHub",
@@ -8,7 +8,7 @@
   },
   "auth": {
     "create-your-account": "Crie a sua conta",
-    "host-tip": "Está a registar-se como o Anfitrião do Site.",
+    "host-tip": "Está a registar-se como o anfitrião do site.",
     "new-password": "Nova palavra-passe",
     "repeat-new-password": "Repita a nova palavra-passe",
     "sign-in-tip": "Já tem uma conta?",
